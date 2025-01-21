@@ -1,0 +1,1 @@
+//parent element that handles clicks between components (input and preview)

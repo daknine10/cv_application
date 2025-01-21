@@ -1,0 +1,1 @@
+//outputs the preview based on the input
