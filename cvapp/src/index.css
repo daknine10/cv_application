@@ -25,6 +25,11 @@ form {
     border-radius: 20px;
 }
 
+.sectionHead {
+    display: flex;
+    justify-content: space-between;
+}
+
 .section {
     display: flex;
     flex-direction: column;
@@ -33,12 +38,12 @@ form {
     border-bottom: 1px solid black;
 }
 
-.education {
+.sub-element {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     margin: 6px;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 20px;
 }

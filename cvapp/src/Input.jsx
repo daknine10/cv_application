@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 function General({ handleGeneral }) {
     return (
         <div className='section'>
-            <h2>General:</h2>
-            <form action="" onSubmit={handleGeneral}>
+            <div className='sectionHead'>
+                <h2>General:</h2>
+                <button className='open'>OPEN</button>
+            </div>
+            <form onSubmit={handleGeneral}>
                 <label htmlFor="first-name">First Name:</label>
                 <input id="first-name" type="text" />
 
@@ -33,7 +36,10 @@ function Educational({ educationsList, handleEducational }) {
 
     return (
         <div className='section'>
-            <h2>Educations:</h2>
+            <div className='sectionHead'>
+                <h2>Educational:</h2>
+                <button className='open'>OPEN</button>
+            </div>
             <form onSubmit={handleEducational}>
                 <label htmlFor="date-from">Date from:</label>
                 <input type="date" name="date-from" id="date-from" />
@@ -53,12 +59,12 @@ function Educational({ educationsList, handleEducational }) {
                 <input type="submit" value="Submit" />
             </form>
 
-            <div className='education'>  
+            <div className='sub-list'>  
                 {educationList.map(education => (
-                    <div key={education.id}>
+                    <div className='sub-element' key={education.id}>
                         <p>{education.dateFrom} - {education.dateTo}</p>
-                        <h2>{education.faculty}</h2>
                         <h3>{education.school}</h3>
+                        <h4>{education.faculty}</h4>
                         <button onClick={() => handleDelete(education.id)}>Remove</button>
                     </div>
                 ))}
@@ -67,11 +73,20 @@ function Educational({ educationsList, handleEducational }) {
     )
 }
 
-function Experience ({ handleExperience }) {
+function Experience ({ experiencesList, handleExperience }) {
+    const [experienceList, setExperienceList] = useState(experiencesList)
+    const handleDelete = (key) => {
+        let newList = experienceList.filter((experience) => experience.id !== key);
+        setExperienceList(newList);
+    }
+
     return (
         <div className='section'>
-            <h2>Experience:</h2>
-            <form action="" onSubmit={handleExperience}>
+            <div className='sectionHead'>
+                <h2>Experience:</h2>
+                <button className='open'>OPEN</button>
+            </div>
+            <form onSubmit={handleExperience}>
                 <label htmlFor="date-from">Date from:</label>
                 <input type="date" name="date-from" id="date-from" />
 
@@ -89,16 +104,27 @@ function Experience ({ handleExperience }) {
 
                 <input type="submit" value="Submit" />
             </form>
+
+            <div className='sub-list'>  
+                {experienceList.map(experience => (
+                    <div className='sub-element' key={experience.id}>
+                        <p>{experience.dateFrom} - {experience.dateTo}</p>
+                        <h3>{experience.company}</h3>
+                        <h4>{experience.position}</h4>
+                        <button onClick={() => handleDelete(experience.id)}>Remove</button>
+                    </div>
+                ))}
+            </div>  
         </div>
     )
 }
 
-export default function Input({ handleGeneral, handleEducational, handleExperience, educations }) {
+export default function Input({ handleGeneral, handleEducational, handleExperience, educations, experiences }) {
     return (
         <div className='inputSection'>
-            <General />
-            <Educational educationsList={educations}/>
-            <Experience />
+            <General handleGeneral={handleGeneral}/>
+            <Educational handleEducational={handleEducational} educationsList={educations}/>
+            <Experience handleExperience={handleExperience} experiencesList={experiences}/>
         </div>
     )
 }
