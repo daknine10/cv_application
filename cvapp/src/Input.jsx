@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 
 function General({ handleGeneral }) {
     return (
-        <div>
+        <div className='section'>
+            <h2>General:</h2>
             <form action="" onSubmit={handleGeneral}>
                 <label htmlFor="first-name">First Name:</label>
                 <input id="first-name" type="text" />
@@ -31,8 +32,9 @@ function Educational({ educationsList, handleEducational }) {
     }
 
     return (
-        <div>
-            <form action="" onSubmit={handleEducational}>
+        <div className='section'>
+            <h2>Educations:</h2>
+            <form onSubmit={handleEducational}>
                 <label htmlFor="date-from">Date from:</label>
                 <input type="date" name="date-from" id="date-from" />
 
@@ -51,7 +53,7 @@ function Educational({ educationsList, handleEducational }) {
                 <input type="submit" value="Submit" />
             </form>
 
-            <div>  
+            <div className='education'>  
                 {educationList.map(education => (
                     <div key={education.id}>
                         <p>{education.dateFrom} - {education.dateTo}</p>
@@ -67,7 +69,8 @@ function Educational({ educationsList, handleEducational }) {
 
 function Experience ({ handleExperience }) {
     return (
-        <div>
+        <div className='section'>
+            <h2>Experience:</h2>
             <form action="" onSubmit={handleExperience}>
                 <label htmlFor="date-from">Date from:</label>
                 <input type="date" name="date-from" id="date-from" />
@@ -92,7 +95,7 @@ function Experience ({ handleExperience }) {
 
 export default function Input({ handleGeneral, handleEducational, handleExperience, educations }) {
     return (
-        <div>
+        <div className='inputSection'>
             <General />
             <Educational educationsList={educations}/>
             <Experience />
