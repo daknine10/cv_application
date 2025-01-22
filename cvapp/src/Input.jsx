@@ -1,4 +1,5 @@
-//input general, educational, experience 
+//input general, educational, experience
+import React, { useState } from 'react';
 
 function General({ handleGeneral }) {
     return (
@@ -22,7 +23,13 @@ function General({ handleGeneral }) {
     )
 }
 
-function Educational({ educations, handleEducational }) {
+function Educational({ educationsList, handleEducational }) {
+    const [educationList, setEducationList] = useState(educationsList)
+    const handleDelete = (key) => {
+        let newList = educationList.filter((education) => education.id !== key);
+        setEducationList(newList);
+    }
+
     return (
         <div>
             <form action="" onSubmit={handleEducational}>
@@ -45,9 +52,12 @@ function Educational({ educations, handleEducational }) {
             </form>
 
             <div>  
-                {educations.map(education => (
-                    <div>
-                        
+                {educationList.map(education => (
+                    <div key={education.id}>
+                        <p>{education.dateFrom} - {education.dateTo}</p>
+                        <h2>{education.faculty}</h2>
+                        <h3>{education.school}</h3>
+                        <button onClick={() => handleDelete(education.id)}>Remove</button>
                     </div>
                 ))}
             </div>  
@@ -80,6 +90,12 @@ function Experience ({ handleExperience }) {
     )
 }
 
-function Input({ handleGeneral, handleEducational, handleExperience }) {
-
+export default function Input({ handleGeneral, handleEducational, handleExperience, educations }) {
+    return (
+        <div>
+            <General />
+            <Educational educationsList={educations}/>
+            <Experience />
+        </div>
+    )
 }
