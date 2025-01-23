@@ -17,7 +17,7 @@ function Experience( {experiences} ) {
 
                     <div className="cv-header">
                         <h3>{experience.company}</h3>
-                        <h3>{experience.dateFrom}-{experience.dateTo}</h3>
+                        <h3>{experience.dateFrom} - {experience.dateTo}</h3>
                     </div>
                     
                     <div className="cv-header">

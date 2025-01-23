@@ -72,7 +72,6 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
                     <div className='sub-list'>
                         {educationsList.map(education => (
                             <div className='sub-element' key={education.id}>
-                                <p>{education.dateFrom} - {education.dateTo}</p>
                                 <h3>{education.school}</h3>
                                 <h4>{education.faculty}</h4>
                                 <button onClick={() => handleDelete(education.id)}>Remove</button>
