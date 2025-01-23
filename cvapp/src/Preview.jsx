@@ -3,7 +3,7 @@ function General( {general} ) {
     return (
         <div className="general">
             <h1>{general.firstName} {general.lastName}</h1>
-            <h2>{general.email} ❖︎ {general.tel}</h2>
+            <h3>{general.email} ❖︎ {general.tel}</h3>
         </div>
     )
 }
@@ -20,8 +20,13 @@ function Experience( {experiences} ) {
                         <h3>{experience.dateFrom}-{experience.dateTo}</h3>
                     </div>
                     
-                    <h3><i>{experience.position}</i></h3>
+                    <div className="cv-header">
+                        <h4><i>{experience.position}</i></h4>
+                        <h4><i>{experience.city}</i></h4>
+                    </div>
+
                     <p>{experience.description}</p>
+
                 </div>
             ))}
         </div>
@@ -40,8 +45,13 @@ function Education({ education }) {
                         <h3>{edu.dateFrom} - {edu.dateTo}</h3>
                     </div>
                     
-                    <h3><i>{edu.faculty}</i></h3>
+                    <div className="cv-header">
+                        <h4><i>{edu.faculty}</i></h4>
+                        <h4><i>{edu.city}</i></h4>
+                    </div>
+
                     <p>{edu.description}</p>
+
                 </div>
             ))}
         </div>
@@ -50,7 +60,7 @@ function Education({ education }) {
 
 export default function Preview({ general, experiences, education }) {
     return (
-        <div>
+        <div className="preview">
             <General general={general}/>
             <Experience experiences={experiences}/>
             <Education education={education}/>

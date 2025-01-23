@@ -57,6 +57,9 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
                         <label htmlFor="school">Institution:</label>
                         <input id="school" type="text" />
 
+                        <label htmlFor="city">City:</label>
+                        <input id="city" type="text" />
+
                         <label htmlFor="faculty">Faculty:</label>
                         <input id="faculty" type="text" />
 
@@ -104,6 +107,9 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
 
                     <label htmlFor="school">Company:</label>
                     <input id="school" type="text" />
+
+                    <label htmlFor="city">City:</label>
+                    <input id="city" type="text" />
 
                     <label htmlFor="faculty">Position:</label>
                     <input id="faculty" type="text" />

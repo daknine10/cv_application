@@ -10,6 +10,7 @@ let educations = [{
     dateFrom: 'January 2018',
     dateTo: 'September 2023',
     school: 'Harvard University',
+    city: 'Budapest',
     faculty: 'Duckologist',
     description: 'At the Duckology Department of Harvard I was studying the behaviour of ducks.'
 }]
@@ -19,6 +20,7 @@ let experiences = [{
     dateFrom: 'January 2018',
     dateTo: 'September 2021',
     company: 'Watermelon Co.',
+    city: 'Budapest',
     position: 'Melon waterer',
     description: 'I watered melons.'
 }]

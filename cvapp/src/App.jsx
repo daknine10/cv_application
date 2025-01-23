@@ -37,22 +37,23 @@ export default function App() {
         e.preventDefault();
         const dateFrom = e.target[0].value;
         const dateTo = e.target[1].value;
-        const institution = e.target[2].value;
-        const faculty = e.target[3].value;
-        const description = e.target[4].value;
-        console.log(educationObj)
+        const school = e.target[2].value;
+        const city = e.target[3].value;
+        const faculty = e.target[4].value;
+        const description = e.target[5].value;
+ 
         setEducationObj([...educationObj,
             {
                 id: crypto.randomUUID(),
                 dateFrom: dateFrom,
                 dateTo: dateTo,
-                institution: institution,
+                school: school,
+                city: city,
                 faculty: faculty,
                 description: description,
             }
         ]
         )
-        
     }
     
     const handleExperience = (e) => {
@@ -60,14 +61,16 @@ export default function App() {
         const dateFrom = e.target[0].value;
         const dateTo = e.target[1].value;
         const company = e.target[2].value;
-        const position = e.target[3].value;
-        const description = e.target[4].value;
+        const city = e.target[3].value;
+        const position = e.target[4].value;
+        const description = e.target[5].value;
         setExperienceObj([...experienceObj,
             {
                 id: crypto.randomUUID(),
                 dateFrom: dateFrom,
                 dateTo: dateTo,
                 company: company,
+                city: city,
                 position: position,
                 description: description,
             }
