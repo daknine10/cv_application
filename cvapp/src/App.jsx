@@ -1,6 +1,7 @@
 import Input from "./Input"
 import { useState } from "react"
 import { general, educations, experiences } from "./educations"
+import Preview from "./Preview"
 
 export default function App() {
     const [generalObj, setGeneralObj] = useState(general)
@@ -85,6 +86,10 @@ export default function App() {
             handleEducationDelete={handleEducationDelete}
             educations={educationObj} 
             experiences={experienceObj}/>
+            <Preview 
+            general={generalObj}
+            experiences={experienceObj}
+            education={educationObj}/>
         </div>
     )
 }
