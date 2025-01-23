@@ -12,7 +12,7 @@ let educations = [{
     school: 'Harvard University',
     faculty: 'Duckologist',
     description: 'At the Duckology Department of Harvard I was studying the behaviour of ducks.'
-},]
+}]
 
 let experiences = [{
     id: crypto.randomUUID(),
