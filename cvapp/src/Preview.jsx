@@ -1,3 +1,4 @@
+import { usePDF } from 'react-to-pdf';
 
 function General( {general} ) {
     return (
@@ -59,11 +60,15 @@ function Education({ education }) {
 }
 
 export default function Preview({ general, experiences, education }) {
+    const { toPDF, targetRef } = usePDF({filename: 'cv.pdf'});
     return (
-        <div className="preview">
+    <div className="preview-container">
+        <div ref={ targetRef } className="preview">
             <General general={general}/>
             <Experience experiences={experiences}/>
             <Education education={education}/>
         </div>
+        <button onClick={() => toPDF()}>Download PDF</button>
+    </div>
     )
 }

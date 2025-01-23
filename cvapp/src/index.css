@@ -66,13 +66,21 @@ h2 {
 
 /*PREVIEW SECTION*/
 
-.preview {
+.preview-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
     border: 1px solid black;
     width: 60%
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%
 }
 
 .general {

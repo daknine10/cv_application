@@ -78,9 +78,9 @@ export default function App() {
         )
     }
 
-    
     return (
         <div className='container'>
+
             <Input 
             handleGeneral={handleGeneral}
             handleExperience={handleExperience}
