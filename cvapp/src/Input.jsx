@@ -49,10 +49,10 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
                 <>
                     <form onSubmit={handleEducational}>
                         <label htmlFor="date-from">Date from:</label>
-                        <input type="date" name="date-from" id="date-from" />
+                        <input type="month" name="date-from" id="date-from" />
 
                         <label htmlFor="date-to">Date to:</label>
-                        <input type="date" name="date-to" id="date-to" />
+                        <input type="month" name="date-to" id="date-to" />
 
                         <label htmlFor="school">Institution:</label>
                         <input id="school" type="text" />
@@ -97,10 +97,10 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
             <>
                 <form onSubmit={handleExperience}>
                     <label htmlFor="date-from">Date from:</label>
-                    <input type="date" name="date-from" id="date-from" />
+                    <input type="month" name="date-from" id="date-from" />
 
                     <label htmlFor="date-to">Date to:</label>
-                    <input type="date" name="date-to" id="date-to" />
+                    <input type="month" name="date-to" id="date-to" />
 
                     <label htmlFor="school">Company:</label>
                     <input id="school" type="text" />
