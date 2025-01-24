@@ -4,7 +4,7 @@ function General( {general} ) {
     return (
         <div className="general">
             <h1>{general.firstName} {general.lastName}</h1>
-            <h3>{general.email} ❖︎ {general.tel}</h3>
+            <h3>{general.email} ❖︎ {general.tel} ❖︎ {general.city}</h3>
         </div>
     )
 }

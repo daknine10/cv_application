@@ -24,12 +24,14 @@ export default function App() {
         const lastName = e.target[1].value;
         const email = e.target[2].value;
         const tel = e.target[3].value;
+        const city = e.target[4].value;
 
         setGeneralObj({
             firstName: firstName,
             lastName: lastName,
             email: email,
             tel: tel,
+            city: city,
         })
     }
     

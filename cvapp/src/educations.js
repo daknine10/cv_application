@@ -3,6 +3,7 @@ let general = {
     lastName: 'Zsiguli',
     email: 'davidzsiguli@idk.com',
     tel: '06995342012',
+    city: 'Budapest'
 }
 
 let educations = [{

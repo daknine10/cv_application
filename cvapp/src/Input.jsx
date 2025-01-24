@@ -27,6 +27,9 @@ function General({ handleGeneral }) {
                 <label htmlFor="tel">Tel.:</label>
                 <input id="tel" type="text" />
 
+                <label htmlFor="city">City:</label>
+                <input id="city" type="text" />
+
                 <input type="submit" value="Submit" />
             </form>
         </>)}
