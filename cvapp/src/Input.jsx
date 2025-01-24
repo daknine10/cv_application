@@ -36,35 +36,67 @@ function General({ handleGeneral }) {
 
 function Educational({ educationsList, handleEducational, handleDelete }) {
     const [isActive, setIsActive] = useState(false);
+    const [formData, setFormData] = useState({
+        dateFrom: '',
+        dateTo: '',
+        school: '',
+        city: '',
+        faculty: '',
+        description: ''
+    });
+    
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleEducational(e);
+        setFormData({
+            dateFrom: '',
+            dateTo: '',
+            school: '',
+            city: '',
+            faculty: '',
+            description: ''
+        });
+    };
+
+    const handleEdit = (id) => {
+        const education = educationsList.find(edu => edu.id === id);
+        setFormData(education);
+        handleDelete(id);
+    };
 
     return (
         <div className='section'>
             <div className='sectionHead'>
-                <h2>Educational:</h2>
+                <h2>Education:</h2>
                 <button className='open' onClick={() => setIsActive(!isActive)}>
                     {isActive ? 'CLOSE' : 'OPEN'}
                 </button>
             </div>
             {isActive && (
                 <>
-                    <form onSubmit={handleEducational}>
-                        <label htmlFor="date-from">Date from:</label>
-                        <input type="month" name="date-from" id="date-from" />
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="dateFrom">Date from:</label>
+                        <input type="month" name="dateFrom" id="dateFrom" value={formData.dateFrom} onChange={handleChange} />
 
-                        <label htmlFor="date-to">Date to:</label>
-                        <input type="month" name="date-to" id="date-to" />
+                        <label htmlFor="dateTo">Date to:</label>
+                        <input type="month" name="dateTo" id="dateTo" value={formData.dateTo} onChange={handleChange} />
 
                         <label htmlFor="school">Institution:</label>
-                        <input id="school" type="text" />
+                        <input id="school" type="text" name="school" value={formData.school} onChange={handleChange} />
 
                         <label htmlFor="city">City:</label>
-                        <input id="city" type="text" />
+                        <input id="city" type="text" name="city" value={formData.city} onChange={handleChange} />
 
                         <label htmlFor="faculty">Faculty:</label>
-                        <input id="faculty" type="text" />
+                        <input id="faculty" type="text" name="faculty" value={formData.faculty} onChange={handleChange} />
 
                         <label htmlFor="description">Description:</label>
-                        <textarea name="description" id="description"></textarea>
+                        <textarea name="description" id="description" value={formData.description} onChange={handleChange}></textarea>
 
                         <input type="submit" value="Submit" />
                     </form>
@@ -75,6 +107,7 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
                                 <h3>{education.school}</h3>
                                 <h4>{education.faculty}</h4>
                                 <button onClick={() => handleDelete(education.id)}>Remove</button>
+                                <button onClick={() => handleEdit(education.id)}>Edit</button>
                             </div>
                         ))}
                     </div>
@@ -86,6 +119,38 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
 
 function Experience ({ experiencesList, handleExperience, handleDelete }) {
     const [isActive, setIsActive] = useState(false);
+    const [formData, setFormData] = useState({
+        dateFrom: '',
+        dateTo: '',
+        company: '',
+        city: '',
+        position: '',
+        description: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleExperience(e);
+        setFormData({
+            dateFrom: '',
+            dateTo: '',
+            company: '',
+            city: '',
+            faculty: '',
+            description: ''
+        });
+    };
+
+    const handleEdit = (id) => {
+        const experience = experiencesList.find(exp => exp.id === id);
+        setFormData(experience);
+        handleDelete(id);
+    };
 
     return (
         <div className='section'>
@@ -97,25 +162,24 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
             </div>
         {isActive && (
             <>
-                <form onSubmit={handleExperience}>
-                    <label htmlFor="date-from">Date from:</label>
-                    <input type="month" name="date-from" id="date-from" />
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="dateFrom">Date from:</label>
+                    <input type="month" name="dateFrom" id="dateFrom" value={formData.dateFrom} onChange={handleChange} />
 
-                    <label htmlFor="date-to">Date to:</label>
-                    <input type="month" name="date-to" id="date-to" />
+                    <label htmlFor="dateTo">Date to:</label>
+                    <input type="month" name="dateTo" id="dateTo" value={formData.dateTo} onChange={handleChange} />
 
-                    <label htmlFor="school">Company:</label>
-                    <input id="school" type="text" />
+                    <label htmlFor="company">Company:</label>
+                    <input id="company" type="text" name="company" value={formData.company} onChange={handleChange} />
 
                     <label htmlFor="city">City:</label>
-                    <input id="city" type="text" />
+                    <input id="city" type="text" name="city" value={formData.city} onChange={handleChange} />
 
-                    <label htmlFor="faculty">Position:</label>
-                    <input id="faculty" type="text" />
+                    <label htmlFor="position">Position:</label>
+                    <input id="position" type="text" name="position" value={formData.position} onChange={handleChange} />
 
                     <label htmlFor="description">Description:</label>
-                    <textarea name="description" id="description"></textarea>
-
+                    <textarea name="description" id="description" value={formData.description} onChange={handleChange}></textarea>
                     <input type="submit" value="Submit" />
                 </form>
 
@@ -126,6 +190,7 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
                             <h3>{experience.company}</h3>
                             <h4>{experience.position}</h4>
                             <button onClick={() => handleDelete(experience.id)}>Remove</button>
+                            <button onClick={() => handleEdit(experience.id)}>Edit</button>
                         </div>
                     ))}
                 </div>

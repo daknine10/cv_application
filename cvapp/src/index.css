@@ -95,11 +95,15 @@ h2 {
 .cv-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
+}
+
+.cv-element {
+    margin-bottom: 12px;
 }
 
 .preview h4 {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .preview h2 {
