@@ -167,10 +167,10 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
             <>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="dateFrom">Date from:</label>
-                    <input type="month" name="dateFrom" id="dateFrom" value={formData.dateFrom} onChange={handleChange} />
+                    <input type="text" name="dateFrom" id="dateFrom" value={formData.dateFrom} onChange={handleChange} />
 
                     <label htmlFor="dateTo">Date to:</label>
-                    <input type="month" name="dateTo" id="dateTo" value={formData.dateTo} onChange={handleChange} />
+                    <input type="text" name="dateTo" id="dateTo" value={formData.dateTo} onChange={handleChange} />
 
                     <label htmlFor="company">Company:</label>
                     <input id="company" type="text" name="company" value={formData.company} onChange={handleChange} />
@@ -189,7 +189,6 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
                 <div className='sub-list'>  
                     {experiencesList.map(experience => (
                         <div className='sub-element' key={experience.id}>
-                            <p>{experience.dateFrom} - {experience.dateTo}</p>
                             <h3>{experience.company}</h3>
                             <h4>{experience.position}</h4>
                             <button onClick={() => handleDelete(experience.id)}>Remove</button>
