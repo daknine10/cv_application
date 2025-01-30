@@ -1,5 +1,7 @@
 //input general, educational, experience
 import React, { useState } from 'react';
+import arrow from './assets/arrow-down-icon.svg'
+
 
 function General({ handleGeneral }) {
     const [isActive, setIsActive] = useState(false);
@@ -8,8 +10,8 @@ function General({ handleGeneral }) {
         <div className='section'>
             <div className='sectionHead'>
                 <h2>General:</h2>
-                <button className='open' onClick={() => setIsActive(!isActive)}>
-                    {isActive ? 'CLOSE' : 'OPEN'}
+                <button className={isActive ? 'close' : 'open'} onClick={() => setIsActive(!isActive)}>
+                    <img src={arrow} alt={isActive ? 'close' : 'open'} />
                 </button>
             </div>
         {isActive && (
@@ -76,8 +78,8 @@ function Educational({ educationsList, handleEducational, handleDelete }) {
         <div className='section'>
             <div className='sectionHead'>
                 <h2>Education:</h2>
-                <button className='open' onClick={() => setIsActive(!isActive)}>
-                    {isActive ? 'CLOSE' : 'OPEN'}
+                <button className={isActive ? 'close' : 'open'} onClick={() => setIsActive(!isActive)}>
+                    <img src={arrow} alt={isActive ? 'close' : 'open'} />
                 </button>
             </div>
             {isActive && (
@@ -159,8 +161,8 @@ function Experience ({ experiencesList, handleExperience, handleDelete }) {
         <div className='section'>
             <div className='sectionHead'>
                 <h2>Experience:</h2>
-                <button className='open' onClick={() => setIsActive(!isActive)}>
-                    {isActive ? 'CLOSE' : 'OPEN'}
+                <button className={isActive ? 'close' : 'open'} onClick={() => setIsActive(!isActive)}>
+                    <img src={arrow} alt={isActive ? 'close' : 'open'} />
                 </button>
             </div>
         {isActive && (

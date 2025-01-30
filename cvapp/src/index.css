@@ -67,6 +67,22 @@ h2 {
     margin-bottom: 6px;
 }
 
+.sectionHead > button {
+    background: none;
+    border: none;
+}
+
+.open {
+    width: 20px;
+    height: 20px;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    transform: rotate(0.5turn);
+}
+
 /*PREVIEW SECTION*/
 
 .preview-container {
